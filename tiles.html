@@ -58,7 +58,7 @@
             var img = ownerDocument.createElement('IMG');
             img.width = this.tileSize.width;
             img.height = this.tileSize.height;
-            img.src = Demo.Utils.GetImageUrl(this._theme + '/evt_' + zoom + '_' + coord.x + '-' + coord.y + '.png');
+            img.src = Demo.Utils.GetImageUrl(this._theme + '/evt_' + zoom + '_' + coord.x + '_' + coord.y + '.png');
 
             return img;
         };
