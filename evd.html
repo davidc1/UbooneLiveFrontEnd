@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <div id="earth-map" style="width:100%;height:800px;margin:0px auto;top:0;left:0;"></div>
+    <div id="earth-map" style="width:1675px;height:1000px;margin:0px auto;"></div>
 
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?libraries=geometry&sensor=false"></script>
     <script type="text/javascript">
@@ -21,8 +21,9 @@
         Demo.EarthMap = function (container) {
             // Create map
             this._map = new google.maps.Map(container, {
-                zoom: 0,
-                center: new google.maps.LatLng(-50, -50),
+                zoom: 2,
+                //position: google.map.ControlPosition.TOP_CENTER,
+                center: {lat: -40, lng: 100},
                 disableDefaultUI: true
             });
 
@@ -64,9 +65,9 @@
             this._backgroundColor = backgroundColor;
         };
 
-        Demo.ImgMapType.prototype.tileSize = new google.maps.Size(1000, 1300);
-        Demo.ImgMapType.prototype.minZoom = 0;
-        Demo.ImgMapType.prototype.maxZoom = 5;
+        Demo.ImgMapType.prototype.tileSize = new google.maps.Size(440, 224);
+        Demo.ImgMapType.prototype.minZoom = 2;
+        Demo.ImgMapType.prototype.maxZoom = 6;
 
         Demo.ImgMapType.prototype.getTile = function (coord, zoom, ownerDocument) {
             var tilesCount = Math.pow(2, zoom);
@@ -189,12 +190,12 @@
         controlText.style.lineHeight = '38px';
         controlText.style.paddingLeft = '5px';
         controlText.style.paddingRight = '5px';
-        controlText.innerHTML = 'Center Map';
+        controlText.innerHTML = 'Center View';
         controlUI.appendChild(controlText);
 
         // Setup the click event listeners: simply set the map to Chicago.
         controlUI.addEventListener('click', function() {
-          map.setCenter({lat: 41.85, lng: -87.65});
+          map.setCenter({lat: -40, lng: 100});
          });
 
      };
