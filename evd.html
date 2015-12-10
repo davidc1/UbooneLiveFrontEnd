@@ -305,7 +305,7 @@
         controlText.style.paddingLeft = '5px';
         controlText.style.paddingRight = '5px';
 
-        controlText.innerHTML = map.getZoom() + ' cm';
+        controlText.innerHTML = Math.round(230/Math.pow(map.getZoom(),2)) + ' cm';
         controlUI.appendChild(controlText);
 
         };
@@ -343,7 +343,7 @@
         controlText.style.paddingLeft = '5px';
         controlText.style.paddingRight = '5px';
 
-        controlText.innerHTML = zoom + ' cm';
+        controlText.innerHTML = Math.round(230/Math.pow(zoom,2)) + ' cm';
         controlUI.appendChild(controlText);
         };
 
